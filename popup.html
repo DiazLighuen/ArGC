@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArGC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css"
+          integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css"
+          integrity="sha512-OdEXQYCOldjqUEsuMKsZRj93Ht23QRlhIb8E/X0sbwZhme8eUw6g8q7AdxGJKakcBbv7+/PX0Gc2btf7Ru8cZA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+
+        a:link, a:visited {
+            color: #000;
+            outline: 0px;
+            text-decoration: none;
+        }
+
+        h3 {
+            margin: 0px;
+        }
+
+        .modal-header {
+            align-items: center;
+            border-bottom: 0.5px solid #dadada;
+        }
+
+        .modal-content {
+            padding: 0 0px;
+            align-items: center;
+            border-bottom: 0.5px solid #dadada;
+        }
+
+        .icono {
+            opacity: 1;
+            display: inline;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .icono:hover {
+            opacity: 0.4;
+        }
+
+        .icono .fab {
+            color: #2f5876;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .items {
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="modal-header">
+    <h3 class="logo">
+        <img src="images/ArGC-logo_128.png" alt="ArGC" class="logo-icon">
+        ArGC <span class="version">(1.0.0)</span>
+    </h3>
+</div>
+<div class="modal-content">
+    <p style="display: inline; vertical-align: middle;">Autor:
+    <div style="vertical-align: middle;" class="icono">
+        <a href="https://steamcommunity.com/profiles/76561198131059212/" target="_blank">
+            <i class="fab fa-steam"></i>
+        </a>
+    </div>
+    </p>
+</div>
+<div class="modal-selectors">
+    <div class="items">
+        <p style="display: inline">Pais</p>
+        <select onchange="filter(this)">
+            <option value="" selected> - </option>
+            <option value="Argentina">AR</option>
+            <option value="Chile">CL</option>
+            <option value="Uruguay">UY</option>
+            <option value="Brasil">BR</option>
+            <option value="No Brasil">NO-BR</option>
+        </select>
+    </div>
+    <div class="items">
+        <p style="display: inline; vertical-align: middle;">Ads:</p>
+        <label class="switch">
+            <input id="ads" type="checkbox" onclick="hideAds()">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</div>
+
+
+<script src="popup.js" charset="utf-8"></script>
+</body>
+</html>
